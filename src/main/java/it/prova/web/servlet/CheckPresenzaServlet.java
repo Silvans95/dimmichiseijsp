@@ -29,17 +29,15 @@ public class CheckPresenzaServlet extends HttpServlet {
 		if (persona.getNome().equalsIgnoreCase(personaConAccesso.getNome())
 				&& persona.getCognome().equalsIgnoreCase(personaConAccesso.getCognome())) {
 
-			request.setAttribute("nomeAttribute", persona.getNome());
-			request.setAttribute("cognomeAttribute", persona.getCognome());
+			request.setAttribute("personaAttribute", persona);
 
 			RequestDispatcher rd = request.getRequestDispatcher("riconoscimento.jsp");
 			rd.forward(request, response);
 
 		} else {
 
-			request.setAttribute("nomeAttribute", persona.getNome());
-			request.setAttribute("cognomeAttribute", persona.getCognome());
-
+			request.setAttribute("personaAttribute", persona);
+			
 			RequestDispatcher rd = request.getRequestDispatcher("sconosciuto.jsp");
 			rd.forward(request, response);
 

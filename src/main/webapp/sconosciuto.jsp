@@ -1,3 +1,4 @@
+<%@page import="it.prova.model.Persona"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -8,9 +9,8 @@
 </head>
 	<body>
 	<h3>BENVENUTO, ma chi sei?</h3><br>
-	<% String nomeCheMiArrivaDaServlet = (String)request.getAttribute("nomeAttribute"); %>
-	<% String cognomeCheMiArrivaDaServlet = (String)request.getAttribute("cognomeAttribute"); %>
-	Purtroppo non ti ho riconosciuto <%= nomeCheMiArrivaDaServlet + " " +  cognomeCheMiArrivaDaServlet %>
+	<% Persona personaCheMiArriva = (Persona)request.getAttribute("personaAttribute"); %>
+	Purtroppo non ti ho riconosciuto <%=  personaCheMiArriva.getNome() + " " +  personaCheMiArriva.getCognome()  %>
 	<br>
 	<br>
 	<br>
